@@ -5,3 +5,10 @@
 ### Votes CSV Details
 - Years 2000 and 2004 are Republicans then Democrats
 - Years 2008 and 2012 are Democrates then Republicans
+
+### TO DO LIST
+- PLSR on attitudinal data
+  - Corr plot to motivate
+- Transform y (voteshares) with logit
+- Aggregate attitudes
+- Merge with Stephen
