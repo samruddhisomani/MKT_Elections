@@ -5,7 +5,7 @@
 ### Votes CSV Details
 - Years 2000 and 2004 are Republicans then Democrats
 - Years 2008 and 2012 are Democrates then Republicans
-- 
+
 
 ## Turnout Details
 - Second column is voting eligible, third column is voting age.
