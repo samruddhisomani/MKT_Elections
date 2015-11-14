@@ -15,4 +15,4 @@
   - Corr plot to motivate
 - Transform y (voteshares) with logit
 - Aggregate attitudes
-- Merge with Stephen
+
