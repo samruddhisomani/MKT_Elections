@@ -10,3 +10,5 @@
 
 
 data$Rep_Percent[data$Year==2004]<-data$Rep_Percent[data$Year==2004]/100
+
+transform=4*data$Rep_Percent - 4*(data$Rep_Percent)**2
