@@ -8,3 +8,5 @@
 - Transform y (voteshares) with logit
 - Aggregate attitudes
 
+
+data$Rep_Percent[data$Year==2004]<-data$Rep_Percent[data$Year==2004]/100
