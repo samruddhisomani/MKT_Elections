@@ -5,7 +5,11 @@ library(rgeos)
 library(maptools)
 library(ggthemes)
 
-#states_map <- map_data("state")
+#why transform
+
+x=seq(0,1,by=.01)
+y=4*x - 4*x**2
+plot(x,y,main="Why Transform?",xlab="Probability",ylab="Transformed")
 
 #reading data
 dist <- readShapeSpatial("../data/cb_2014_us_state_500k.shp")
@@ -32,19 +36,7 @@ ggplot(data, aes(map_id = as.factor(State))) +
   theme_tufte()+
   facet_grid(Year~.)
 
-entropy=-2*data$Rep_Percent*log(data$Rep_Percent,base=2)
 
-plot(data$Rep_Percent,transform)
-
-max(entropy)
-
-transform=4*data$Rep_Percent - 4*(data$Rep_Percent)**2
-
-max(transform)
-
-x=seq(0,1,by=.01)
-y=4*x - 4*x**2
-plot(x,y,main="Why Transform?",xlab="Probability",ylab="Transformed")
 
 
 
