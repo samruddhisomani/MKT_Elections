@@ -8,7 +8,9 @@
 - Transform y (voteshares) with logit
 - Aggregate attitudes
 
-
+Code to fix percentages:
 data$Rep_Percent[data$Year==2004]<-data$Rep_Percent[data$Year==2004]/100
+data$Dem_Percent[data$Year==2004]<-data$Dem_Percent[data$Year==2004]/100
 
+Sam's quadratic bound stuff:
 transform=4*data$Rep_Percent - 4*(data$Rep_Percent)**2
