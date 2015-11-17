@@ -28,7 +28,8 @@ fortS<-fortS[fort$lat>10,]
 
 #pretty pictures
 ggplot(data, aes(map_id = as.factor(State))) + 
-  geom_map(map = fort,aes(fill=Rep_Percent),color='black') + 
+  geom_map(map = fort,aes(fill=Rep_Percent),col
+           or='black') + 
   expand_limits(x=c(-180,-60),y=c(15,75)) +
   scale_fill_gradient2(low="blue", high="red",midpoint=.5,space='Lab',name="Republican Share")+
   theme_tufte()+
