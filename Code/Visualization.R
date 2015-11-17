@@ -14,9 +14,7 @@ plot(x,y,main="Why Transform?",xlab="Probability",ylab="Transformed")
 #reading data
 dist <- readShapeSpatial("../data/cb_2014_us_state_500k.shp")
 
-data<-read.csv("../data/MasterData.csv")
-data$Rep_Percent[data$Year==2004]<-data$Rep_Percent[data$Year==2004]/100
-data$Dem_Percent[data$Year==2004]<-data$Dem_Percent[data$Year==2004]/100
+data<-read.csv("../data/MasterData2.csv")
 
 #transforming data in ggplot object
 fort<-fortify(dist,region='NAME')
@@ -36,8 +34,25 @@ ggplot(data, aes(map_id = as.factor(State))) +
   theme_tufte()+
   facet_grid(Year~.)
 
+ggplot(data, aes(map_id = as.factor(State))) + 
+  geom_map(map = fort,aes(fill=rep_trans),color='black') + 
+  expand_limits(x=c(-180,-60),y=c(15,75)) +
+  scale_fill_gradient(high='white',name="Transform")+
+  theme_tufte()+
+  facet_grid(Year~.)
 
 
 
+# Leons Graph Code
+data_sub$pred_inv = pred_inv
+data_graph = as.data.frame(cbind(data_sub[2],data_sub[4],pred_inv))
+
+ggplot(data_graph, aes(map_id = as.factor(State))) + 
+  geom_map(data=fortS,map= fortS,aes(map_id=as.factor(id)),fill='pink',color='black')+
+  geom_map(map = fortS,aes(fill=rep_logit),color='black') + 
+  expand_limits(x=c(-180,-60),y=c(15,75)) +
+  scale_fill_gradient(high='white',name="Transform")+
+  theme_tufte()+
+  facet_grid(Year~.)
 
 
