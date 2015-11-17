@@ -14,7 +14,7 @@ share_error = (1-sqrt(1-undo_logit))/2
 
 pred = predict(plsr_model,comps=1:75)
 pred_inv = inv.logit(pred)
-pred_rmse = mean((pred_inv-data$rep_trans[1:85])^2)
+pred_rmse = sqrt(mean((pred_inv-data$rep_trans[1:85])^2))
 
 adspend = data_sub[,"PercentMoney"]
 
