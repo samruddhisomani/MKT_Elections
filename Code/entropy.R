@@ -14,3 +14,4 @@ data$dem_logit = logit(data$dem_trans,min=min(data$dem_trans)-0.0001,max=max(dat
 
 write.csv(data,"../data/MasterData2.csv")
 
+
