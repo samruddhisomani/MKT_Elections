@@ -44,12 +44,14 @@ ggplot(data, aes(map_id = as.factor(State))) +
 
 
 # Leons Graph Code
-data_sub$pred_inv = pred_inv
+pred_inv = read.csv("../data/transformed_all_leon.csv")
+pred_inv = pred_inv$rep_logit
+
 data_graph = as.data.frame(cbind(data_sub[2],data_sub[4],pred_inv))
 
 ggplot(data_graph, aes(map_id = as.factor(State))) + 
-  geom_map(data=fortS,map= fortS,aes(map_id=as.factor(id)),fill='pink',color='black')+
-  geom_map(map = fortS,aes(fill=rep_logit),color='black') + 
+  geom_map(data=fort,map=fort,aes(map_id=as.factor(id)),fill='pink',color='black')+
+  geom_map(map=fort,aes(fill=pred_inv),color='black') + 
   expand_limits(x=c(-180,-60),y=c(15,75)) +
   scale_fill_gradient(high='white',name="Transform")+
   theme_tufte()+
